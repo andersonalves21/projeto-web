@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Web com Testes em Mocha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Lista de Itens</h1>
+    <input type="text" id="itemInput" placeholder="Digite um item">
+    <button onclick="adicionarItem()">Adicionar Item</button>
+    <ul id="itemList"></ul>
+
+    <div id="mocha"></div>
+    <script src="app.js"></script>
+    <script src="mocha/mocha.js"></script>
+    <script src="test/test.js"></script>
+    <script>
+        mocha.setup('bdd');
+        mocha.run();
+    </script>
+</body>
+
+<div id="mocha"></div> <!-- Div para exibir os resultados dos testes -->
+<script src="app.js"></script> <!-- O código principal -->
+<script src="test/test.js"></script> <!-- O arquivo de testes -->
+<script>
+    mocha.setup('bdd'); // Configura o Mocha para o estilo BDD
+    mocha.run(); // Executa os testes
+</script>
+
+</html>
