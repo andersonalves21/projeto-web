@@ -27,3 +27,8 @@ describe("Teste da interface de lista de itens", function() {
         assert.equal(itemList.children.length, 0);
     });
 });
+
+const { JSDOM } = require("jsdom");
+const { window } = new JSDOM(`<!DOCTYPE html><body><ul id="itemList"></ul><input id="itemInput" />`);
+global.document = window.document;
+global.window = window;
