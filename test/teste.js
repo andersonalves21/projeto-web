@@ -1,4 +1,8 @@
 const assert = chai.assert;
+const { JSDOM } = require("jsdom");
+const { window } = new JSDOM(`<!DOCTYPE html><body><ul id="itemList"></ul><input id="itemInput" />`);
+global.document = window.document;
+global.window = window;
 
 describe("Teste da interface de lista de itens", function() {
     beforeEach(function() {
@@ -28,7 +32,4 @@ describe("Teste da interface de lista de itens", function() {
     });
 });
 
-const { JSDOM } = require("jsdom");
-const { window } = new JSDOM(`<!DOCTYPE html><body><ul id="itemList"></ul><input id="itemInput" />`);
-global.document = window.document;
-global.window = window;
+
